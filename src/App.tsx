@@ -6,7 +6,7 @@ function App() {
       {/* Hero Section */}
       <header className="hero">
         <nav className="nav">
-          <div className="logo">JD</div>
+          <div className="logo">RG</div>
           <div className="nav-links">
             <a href="#about">About</a>
             <a href="#services">Services</a>
@@ -14,7 +14,7 @@ function App() {
           </div>
         </nav>
         <div className="hero-content">
-          <h1 className="hero-title">Jane Doe</h1>
+          <h1 className="hero-title">Ryan Gratacos</h1>
           <p className="hero-subtitle">Marketing Consultant</p>
           <p className="hero-description">
             Helping brands grow through strategic marketing and data-driven insights
@@ -64,14 +64,14 @@ function App() {
           Ready to take your marketing to the next level? Let's discuss how I can help you achieve your goals.
         </p>
         <div className="contact-info">
-          <a href="mailto:hello@janedoe.com" className="contact-link">hello@janedoe.com</a>
+          <a href="mailto:ryan@gratacos.com" className="contact-link">ryan@gratacos.com</a>
           <a href="tel:+1234567890" className="contact-link">+1 (234) 567-890</a>
         </div>
       </section>
 
       {/* Footer */}
       <footer className="footer">
-        <p>&copy; 2024 Jane Doe. All rights reserved.</p>
+        <p>&copy; 2024 Ryan Gratacos. All rights reserved.</p>
       </footer>
     </div>
   )
