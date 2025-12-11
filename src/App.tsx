@@ -1,18 +1,40 @@
 import './App.css'
 import ryanPhoto from './assets/ryan-linked-in.jpeg'
+import ryanHenryPhoto from './assets/IMG_1222.jpg'
+import { useState } from 'react'
 
 function App() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen)
+  }
+
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false)
+  }
+
   return (
     <div className="portfolio">
       {/* Hero Section */}
       <header className="hero">
         <nav className="nav">
           <div className="logo">RG</div>
-          <div className="nav-links">
-            <a href="#about">About</a>
-            <a href="#services">Expertise</a>
-            <a href="#experience">Experience</a>
-            <a href="#contact">Contact</a>
+          <button
+            className={`hamburger ${mobileMenuOpen ? 'active' : ''}`}
+            onClick={toggleMobileMenu}
+            aria-label="Toggle menu"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <div className={`nav-links ${mobileMenuOpen ? 'active' : ''}`}>
+            <a href="#about" onClick={closeMobileMenu}>About</a>
+            <a href="#services" onClick={closeMobileMenu}>Expertise</a>
+            <a href="#experience" onClick={closeMobileMenu}>Experience</a>
+            <a href="#education" onClick={closeMobileMenu}>Education</a>
+            <a href="#contact" onClick={closeMobileMenu}>Contact</a>
           </div>
         </nav>
         <div className="hero-content">
@@ -222,6 +244,111 @@ function App() {
             </div>
           </div>
         </div>
+        </div>
+      </section>
+
+      {/* Education & Certifications Section */}
+      <section id="education" className="section education">
+        <div className="section-content">
+          <h2 className="section-title">Education & Credentials</h2>
+
+          <div className="education-grid">
+            {/* Education */}
+            <div className="edu-category">
+              <h3 className="category-title">Education</h3>
+              <div className="edu-card">
+                <div className="edu-header">
+                  <div>
+                    <h4 className="edu-institution">Drew University</h4>
+                    <p className="edu-degree">Bachelor of Arts - BA</p>
+                    <p className="edu-field">Economics, Business Management</p>
+                  </div>
+                </div>
+              </div>
+              <div className="edu-card">
+                <div className="edu-header">
+                  <div>
+                    <h4 className="edu-institution">UC Berkeley Extension</h4>
+                    <p className="edu-degree">Math for Management</p>
+                    <p className="edu-description">Math principles in a business context across economics, statistics, probability, finance and capital budgeting.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Certifications */}
+            <div className="edu-category">
+              <h3 className="category-title">Certifications</h3>
+              <div className="cert-card">
+                <div className="cert-icon">🎯</div>
+                <div>
+                  <h4 className="cert-title">Prof G Certified Strategist</h4>
+                  <p className="cert-issuer">Section</p>
+                  <p className="cert-date">Issued Jul 2020</p>
+                </div>
+              </div>
+              <div className="cert-card">
+                <div className="cert-icon">🏆</div>
+                <div>
+                  <h4 className="cert-title">Certified Scrum Product Owner® (CSPO®)</h4>
+                  <p className="cert-issuer">Scrum Alliance</p>
+                  <p className="cert-date">Issued May 2022 · Expired May 2024</p>
+                  <p className="cert-credential">Credential ID: 1586744</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Additional Involvement */}
+          <div className="additional-section">
+            <h3 className="category-title">Community & Projects</h3>
+            <div className="involvement-grid">
+              <div className="involvement-card">
+                <div className="involvement-icon">🌈</div>
+                <div className="involvement-content">
+                  <h4 className="involvement-title">Out and Equal Workplace Summit 2013</h4>
+                  <p className="involvement-date">Sep 2013 - Oct 2013</p>
+                  <p className="involvement-description">
+                    Participated in the premier conference on LGBT workplace equality, engaging with 2,500+ attendees across 140+ workshops focused on creating inclusive workplace environments and promoting diversity best practices.
+                  </p>
+                </div>
+              </div>
+              <div className="involvement-card">
+                <div className="involvement-icon">📚</div>
+                <div className="involvement-content">
+                  <h4 className="involvement-title">READ 718 Volunteer</h4>
+                  <p className="involvement-date">Jan 2019 - Jan 2020</p>
+                  <p className="involvement-description">
+                    Brooklyn-based organization supporting and promoting literacy in students who test below their reading level.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Personal Section */}
+      <section id="personal" className="section personal">
+        <div className="section-content">
+          <div className="personal-container">
+            <div className="personal-image-wrapper">
+              <img src={ryanHenryPhoto} alt="Ryan and Henry" className="personal-image" />
+            </div>
+            <div className="personal-content">
+              <h2 className="personal-title">Beyond Work</h2>
+              <p className="personal-text">
+                When I'm not optimizing marketing operations, you'll find me exploring New York City with my rescue dog, Henry.
+                He's taught me that the best strategies often come from patience, adaptability, and a healthy dose of curiosity—qualities
+                that translate surprisingly well from dog parks to data dashboards.
+              </p>
+              <p className="personal-text">
+                Based in Brooklyn, I'm passionate about creating inclusive workplaces and supporting literacy initiatives in the community.
+                Whether it's through volunteering or participating in diversity summits, I believe in using my skills to make a positive impact
+                beyond the spreadsheet.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
